@@ -1,0 +1,10 @@
+name: kite-shiny
+title:
+username: hendrikmahlkow
+account: hendrikmahlkow
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10764961
+bundleId: 8049511
+url: https://hendrikmahlkow.shinyapps.io/kite-shiny/
+version: 1

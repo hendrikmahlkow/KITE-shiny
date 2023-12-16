@@ -8,12 +8,12 @@ library(tidyverse)
 # UI
 ui <- fluidPage(
   titlePanel("KITE Model Simplified", windowTitle = "KITE Model"),
-  h3("Decoupling scenarios"),
-  p("Increase trade barriers between two countries."),
+  h3("Decoupling Europe"),
+  p("Increase trade barriers between EU and different trade partners."),
   sidebarLayout(
     sidebarPanel(
-      selectInput("country1", "Select First Country:", choices = c("USA", "CHN", "IND")),
-      selectInput("country2", "Select Second Country:", choices = c("USA", "CHN", "IND")),
+      selectInput("enemy", "EU Decouples From:", choices = c("USA", "CHN", "IND", "RUS", "BRA")),
+      selectInput("tradeFlow", "Select Decoupling Flow:", choices = c("Imports", "Exports", "Imports & Exports")),
       sliderInput("tradeBarrier", "Select Trade Barrier Increase:",
                   min = 1, max = 4, value = 1, step = 1,
                   ticks = FALSE),  # Optional: disable default ticks for cleaner UI
@@ -59,14 +59,22 @@ server <- function(input, output, session) {
            "4" = 2)
   })
 
+  # Reactive expression to map trade flow input to data frame values
+  tradeFlowMap <- reactive({
+    switch(input$tradeFlow,
+           "Imports" = "imports",
+           "Exports" = "exports",
+           "Imports & Exports" = "imports_and_exports")
+  })
+
   dataset <- reactive({
-    data <- read_csv("data.csv")
+    data <- read_csv("decopuling_results.csv")
     # Filter and sort data
     filtered <- data %>%
-      filter(ntb_increase == tradeBarrierValue(),  # Use tradeBarrierValue as a function
-             country_1 == input$country1,
-             country_2 == input$country2) %>%
-      select(-ntb_increase, -country_1, -country_2) %>%
+      filter(ntb == tradeBarrierValue(),  # Use tradeBarrierValue as a function
+             enemy == input$enemy,
+             scenario == tradeFlowMap()) %>%
+      select(-ntb, -enemy, -scenario) %>%
       rename(welfare_change = value) %>%
       arrange(desc(welfare_change))
 
@@ -76,10 +84,10 @@ server <- function(input, output, session) {
   # Reactive expression to generate the map data
   mapData <- reactive({
     map <- read_rds("map_world_gtap.rds")
-    data <- fread("data.csv")
+    data <- fread("decopuling_results.csv")
     mergedData <- merge(
       map,
-      data[country_1 == input$country1 & country_2 == input$country2 & ntb_increase == tradeBarrierValue(), .(value, gtap_code = country)],
+      data[enemy == input$enemy & ntb == tradeBarrierValue() & scenario == tradeFlowMap(), .(value, gtap_code = country)],
       by = "gtap_code"
     )
     return(mergedData)
