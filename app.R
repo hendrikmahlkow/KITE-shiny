@@ -7,9 +7,8 @@ library(tidyverse)
 
 # UI
 ui <- fluidPage(
-  titlePanel("KITE Model Simplified", windowTitle = "KITE Model"),
-  h3("Decoupling Europe"),
-  p("Increase trade barriers between EU and different trade partners."),
+  titlePanel("Trump Tariff Simulator", windowTitle = "KITE Model"),
+  p("Choose individual country-level tariffs on US imports."),
   sidebarLayout(
     sidebarPanel(
       selectInput("enemy", "EU Decouples From:", choices = c("USA", "CHN", "IND", "RUS", "BRA")),

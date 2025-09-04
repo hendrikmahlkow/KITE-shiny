@@ -1,0 +1,66 @@
+Category,Category_de,Number,Code,Description,Description_de,broad_sector,broad_sector_de
+Crops,Pflanzenbau,1,pdr,Paddy rice,Reis,Agriculture,Landwirtschaft
+Crops,Pflanzenbau,2,wht,Wheat,Weizen,Agriculture,Landwirtschaft
+Crops,Pflanzenbau,3,gro,Cereal grains nec,"Sonstige Getreidesorten",Agriculture,Landwirtschaft
+Crops,Pflanzenbau,4,v_f,"Vegetables, fruits, nuts","Gemüse, Obst, Nüsse",Agriculture,Landwirtschaft
+Crops,Pflanzenbau,5,osd,Oilseeds,Ölsaaten,Agriculture,Landwirtschaft
+Crops,Pflanzenbau,6,c_b,"Sugar cane, sugar beet","Zuckerrohr, Zuckerrüben",Agriculture,Landwirtschaft
+Crops,Pflanzenbau,7,pfb,Plant-based fibers,Pflanzenbasierte Fasern,Agriculture,Landwirtschaft
+Crops,Pflanzenbau,8,ocr,Crops nec,"Sonstige Feldfrüchte",Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,9,ctl,"Bovine cattle, sheep and goats, horses","Rinder, Schafe und Ziegen, Pferde",Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,10,oap,Animal products nec,"Sonstige tierische Produkte",Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,11,rmk,Raw milk,Rohmilch,Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,12,wol,"Wool, silk-worm cocoons","Wolle, Seidenkokons",Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,19,cmt,Bovine meat products,Rindfleischprodukte,Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,20,omt,Meat products nec,"Sonstige Fleischprodukte",Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,21,vol,Vegetable oils and fats,"Pflanzliche Öle und Fette",Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,22,mil,Dairy products,Molkereiprodukte,Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,23,pcr,Processed rice,Verarbeiteter Reis,Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,24,sgr,Sugar,Zucker,Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,25,ofd,Food products nec,"Sonstige Nahrungsmittelprodukte",Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,26,b_t,Beverages and tobacco products,"Getränke und Tabakwaren",Agriculture,Landwirtschaft
+Fossils & Energy,Fossile Brennstoffe & Energie,15,coa,Coal,Kohle,Fossils & Energy,Fossile Brennstoffe & Energie
+Fossils & Energy,Fossile Brennstoffe & Energie,16,oil,Oil,Öl,Fossils & Energy,Fossile Brennstoffe & Energie
+Fossils & Energy,Fossile Brennstoffe & Energie,17,gas,Gas,Gas,Fossils & Energy,Fossile Brennstoffe & Energie
+Fossils & Energy,Fossile Brennstoffe & Energie,32,p_c,"Petroleum, coal products","Erdöl- und Kohleprodukte",Fossils & Energy,Fossile Brennstoffe & Energie
+Fossils & Energy,Fossile Brennstoffe & Energie,46,ely,Electricity,Elektrizität,Fossils & Energy,Fossile Brennstoffe & Energie
+Fossils & Energy,Fossile Brennstoffe & Energie,47,gdt,"Gas manufacture, distribution","Gasproduktion und -verteilung",Fossils & Energy,Fossile Brennstoffe & Energie
+Ag. Products,Agrarprodukte,13,frs,Forestry,Forstwirtschaft,Agriculture,Landwirtschaft
+Ag. Products,Agrarprodukte,14,fsh,Fishing,Fischerei,Agriculture,Landwirtschaft
+Manufacturing,Verarbeitendes Gewerbe,18,oxt,Other Extraction,"Sonstiger Abbau",Mining & Extraction,Bergbau & Extraktion
+Manufacturing,Verarbeitendes Gewerbe,27,tex,Textiles,Textilien,Light Manufacturing,Leichtindustrie
+Manufacturing,Verarbeitendes Gewerbe,28,wap,Wearing apparel,Bekleidung,Light Manufacturing,Leichtindustrie
+Manufacturing,Verarbeitendes Gewerbe,29,lea,Leather products,Lederwaren,Light Manufacturing,Leichtindustrie
+Manufacturing,Verarbeitendes Gewerbe,30,lum,Wood products,Holzprodukte,Wood & Paper,Holz & Papier
+Manufacturing,Verarbeitendes Gewerbe,31,ppp,"Paper products, publishing","Papierprodukte, Verlagswesen",Wood & Paper,Holz & Papier
+Manufacturing,Verarbeitendes Gewerbe,33,chm,Chemical products,Chemische Produkte,Chemicals & Pharmaceuticals,Chemie & Pharma
+Manufacturing,Verarbeitendes Gewerbe,34,bph,Basic pharmaceutical products,Grundlegende pharmazeutische Produkte,Chemicals & Pharmaceuticals,Chemie & Pharma
+Manufacturing,Verarbeitendes Gewerbe,35,rpp,Rubber and plastic products,"Gummi- und Kunststoffprodukte",Chemicals & Pharmaceuticals,Chemie & Pharma
+Manufacturing,Verarbeitendes Gewerbe,36,nmm,Mineral products nec,"Sonstige Mineralprodukte",Minerals & Basic Metals,Mineralien & Grundmetalle
+Manufacturing,Verarbeitendes Gewerbe,37,i_s,Ferrous metals,Eisenmetalle,Minerals & Basic Metals,Mineralien & Grundmetalle
+Manufacturing,Verarbeitendes Gewerbe,38,nfm,Metals nec,"Sonstige Metalle",Minerals & Basic Metals,Mineralien & Grundmetalle
+Manufacturing,Verarbeitendes Gewerbe,39,fmp,Metal products,Metallprodukte,Metal Products & Machinery,Metallwaren & Maschinen
+Manufacturing,Verarbeitendes Gewerbe,40,ele,"Computer, electronic and optical products","Computer-, Elektronik- und optische Produkte",Electronics & Precision Equipment,Elektronik & Präzisionstechnik
+Manufacturing,Verarbeitendes Gewerbe,41,eeq,Electrical equipment,Elektroausrüstung,Metal Products & Machinery,Metallwaren & Maschinen
+Manufacturing,Verarbeitendes Gewerbe,42,ome,Machinery and equipment nec,"Sonstige Maschinen und Ausrüstungen",Metal Products & Machinery,Metallwaren & Maschinen
+Manufacturing,Verarbeitendes Gewerbe,43,mvh,Motor vehicles and parts,"Kraftfahrzeuge und Teile",Transport Equipment,Transportausrüstung
+Manufacturing,Verarbeitendes Gewerbe,44,otn,Transport equipment nec,"Sonstige Transportausrüstungen",Transport Equipment,Transportausrüstung
+Manufacturing,Verarbeitendes Gewerbe,45,omf,Manufactures nec,"Sonstige verarbeitete Waren",Light Manufacturing,Leichtindustrie
+Services,Dienstleistungen,48,wtr,Water,Wasser,Services,Dienstleistungen
+Services,Dienstleistungen,49,cns,Construction,Bauwirtschaft,Services,Dienstleistungen
+Services,Dienstleistungen,50,trd,Wholesale and retail trade,Groß- und Einzelhandel,Services,Dienstleistungen
+Services,Dienstleistungen,51,afs,"Accommodation, Food and service activities","Beherbergung, Gastronomie und Dienstleistungen",Services,Dienstleistungen
+Services,Dienstleistungen,52,otp,Transport nec,"Sonstige Transportarten",Services,Dienstleistungen
+Services,Dienstleistungen,53,wtp,Water transport,Schifffahrt,Services,Dienstleistungen
+Services,Dienstleistungen,54,atp,Air transport,Lufttransport,Services,Dienstleistungen
+Services,Dienstleistungen,55,whs,Warehousing and support activities,Lagerhaltung und Logistik,Services,Dienstleistungen
+Services,Dienstleistungen,56,cmn,Communication,Kommunikation,Services,Dienstleistungen
+Services,Dienstleistungen,57,ofi,Financial services nec,"Sonstige Finanzdienstleistungen",Services,Dienstleistungen
+Services,Dienstleistungen,58,ins,Insurance,Versicherungen,Services,Dienstleistungen
+Services,Dienstleistungen,59,rsa,Real estate activities,Immobilienwirtschaft,Services,Dienstleistungen
+Services,Dienstleistungen,60,obs,Business services nec,"Sonstige Unternehmensdienstleistungen",Services,Dienstleistungen
+Services,Dienstleistungen,61,ros,Recreational and other services,"Freizeit- und sonstige Dienstleistungen",Services,Dienstleistungen
+Services,Dienstleistungen,62,osg,Public Administration and defense,"Öffentliche Verwaltung und Verteidigung",Services,Dienstleistungen
+Services,Dienstleistungen,63,edu,Education,Bildung,Services,Dienstleistungen
+Services,Dienstleistungen,64,hht,Human health and social work activities,"Gesundheits- und Sozialwesen",Services,Dienstleistungen
+Services,Dienstleistungen,65,dwe,Dwellings,Wohnungswesen,Services,Dienstleistungen

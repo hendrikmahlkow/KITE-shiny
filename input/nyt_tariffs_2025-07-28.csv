@@ -1,0 +1,194 @@
+country,status,value
+BRA,New rateimposed,1.5
+IND,New rateimposed,1.5
+SYR,New rateimposed,1.41
+LAO,New rateimposed,1.4
+MMR,New rateimposed,1.4
+CHE,New rateimposed,1.39
+CAN,New rateimposed,1.35
+IRQ,New rateimposed,1.35
+SRB,New rateimposed,1.35
+DZA,New rateimposed,1.3
+BIH,New rateimposed,1.3
+LBY,New rateimposed,1.3
+ZAF,New rateimposed,1.3
+BRN,New rateimposed,1.25
+KAZ,New rateimposed,1.25
+MDA,New rateimposed,1.25
+TUN,New rateimposed,1.25
+BGD,New rateimposed,1.2
+LKA,New rateimposed,1.2
+TWN,New rateimposed,1.2
+KHM,New rateimposed,1.19
+MYS,New rateimposed,1.19
+PAK,New rateimposed,1.19
+THA,New rateimposed,1.19
+NIC,New rateimposed,1.18
+AFG,New rateimposed,1.15
+AGO,New rateimposed,1.15
+BOL,New rateimposed,1.15
+BWA,New rateimposed,1.15
+CMR,New rateimposed,1.15
+TCD,New rateimposed,1.15
+CRI,New rateimposed,1.15
+CIV,New rateimposed,1.15
+COD,New rateimposed,1.15
+ECU,New rateimposed,1.15
+GNQ,New rateimposed,1.15
+FJI,New rateimposed,1.15
+GHA,New rateimposed,1.15
+GUY,New rateimposed,1.15
+ISL,New rateimposed,1.15
+ISR,New rateimposed,1.15
+JOR,New rateimposed,1.15
+LSO,New rateimposed,1.15
+LIE,New rateimposed,1.15
+MDG,New rateimposed,1.15
+MWI,New rateimposed,1.15
+MUS,New rateimposed,1.15
+MOZ,New rateimposed,1.15
+NAM,New rateimposed,1.15
+NRU,New rateimposed,1.15
+NZL,New rateimposed,1.15
+NGA,New rateimposed,1.15
+MKD,New rateimposed,1.15
+NOR,New rateimposed,1.15
+PNG,New rateimposed,1.15
+TTO,New rateimposed,1.15
+TUR,New rateimposed,1.15
+UGA,New rateimposed,1.15
+VUT,New rateimposed,1.15
+VEN,New rateimposed,1.15
+ZMB,New rateimposed,1.15
+ZWE,New rateimposed,1.15
+VNM,Deal rate,1.2
+IDN,Deal rate,1.19
+PHL,Deal rate,1.19
+AUT,Deal rate,1.15
+BEL,Deal rate,1.15
+BGR,Deal rate,1.15
+HRV,Deal rate,1.15
+CYP,Deal rate,1.15
+CZE,Deal rate,1.15
+DNK,Deal rate,1.15
+EST,Deal rate,1.15
+FIN,Deal rate,1.15
+FRA,Deal rate,1.15
+DEU,Deal rate,1.15
+GRC,Deal rate,1.15
+HUN,Deal rate,1.15
+IRL,Deal rate,1.15
+ITA,Deal rate,1.15
+JPN,Deal rate,1.15
+LVA,Deal rate,1.15
+LTU,Deal rate,1.15
+LUX,Deal rate,1.15
+MLT,Deal rate,1.15
+NLD,Deal rate,1.15
+POL,Deal rate,1.15
+PRT,Deal rate,1.15
+ROU,Deal rate,1.15
+SVK,Deal rate,1.15
+SVN,Deal rate,1.15
+KOR,Deal rate,1.15
+ESP,Deal rate,1.15
+SWE,Deal rate,1.15
+GBR,Deal rate,1.1
+CHN,Upcomingdeadline,1.3
+MEX,Upcomingdeadline,1.25
+SGP,Baselinetariff,1.1
+COL,Baselinetariff,1.1
+AUS,Baselinetariff,1.1
+CHL,Baselinetariff,1.1
+SAU,Baselinetariff,1.1
+PER,Baselinetariff,1.1
+ARE,Baselinetariff,1.1
+DOM,Baselinetariff,1.1
+ARG,Baselinetariff,1.1
+HND,Baselinetariff,1.1
+GTM,Baselinetariff,1.1
+RUS,Baselinetariff,1.1
+EGY,Baselinetariff,1.1
+SLV,Baselinetariff,1.1
+MAR,Baselinetariff,1.1
+QAT,Baselinetariff,1.1
+BHS,Baselinetariff,1.1
+KWT,Baselinetariff,1.1
+OMN,Baselinetariff,1.1
+URY,Baselinetariff,1.1
+BHR,Baselinetariff,1.1
+UKR,Baselinetariff,1.1
+KEN,Baselinetariff,1.1
+HTI,Baselinetariff,1.1
+PAN,Baselinetariff,1.1
+ETH,Baselinetariff,1.1
+JAM,Baselinetariff,1.1
+PRY,Baselinetariff,1.1
+LBN,Baselinetariff,1.1
+COG,Baselinetariff,1.1
+SEN,Baselinetariff,1.1
+TZA,Baselinetariff,1.1
+GAB,Baselinetariff,1.1
+GEO,Baselinetariff,1.1
+AZE,Baselinetariff,1.1
+ALB,Baselinetariff,1.1
+ARM,Baselinetariff,1.1
+NPL,Baselinetariff,1.1
+SUR,Baselinetariff,1.1
+TGO,Baselinetariff,1.1
+BLZ,Baselinetariff,1.1
+LBR,Baselinetariff,1.1
+BEN,Baselinetariff,1.1
+BRB,Baselinetariff,1.1
+MCO,Baselinetariff,1.1
+UZB,Baselinetariff,1.1
+DJI,Baselinetariff,1.1
+,Baselinetariff,1.1
+RWA,Baselinetariff,1.1
+SLE,Baselinetariff,1.1
+MDV,Baselinetariff,1.1
+MNG,Baselinetariff,1.1
+SMR,Baselinetariff,1.1
+ATG,Baselinetariff,1.1
+SWZ,Baselinetariff,1.1
+BLR,Baselinetariff,1.1
+MHL,Baselinetariff,1.1
+KNA,Baselinetariff,1.1
+KGZ,Baselinetariff,1.1
+MNE,Baselinetariff,1.1
+TKM,Baselinetariff,1.1
+GRD,Baselinetariff,1.1
+SDN,Baselinetariff,1.1
+YEM,Baselinetariff,1.1
+NER,Baselinetariff,1.1
+VCT,Baselinetariff,1.1
+LCA,Baselinetariff,1.1
+IRN,Baselinetariff,1.1
+GIN,Baselinetariff,1.1
+TLS,Baselinetariff,1.1
+WSM,Baselinetariff,1.1
+MLI,Baselinetariff,1.1
+CUB,Baselinetariff,1.1
+TJK,Baselinetariff,1.1
+BFA,Baselinetariff,1.1
+CPV,Baselinetariff,1.1
+BDI,Baselinetariff,1.1
+AND,Baselinetariff,1.1
+BTN,Baselinetariff,1.1
+MRT,Baselinetariff,1.1
+TON,Baselinetariff,1.1
+SOM,Baselinetariff,1.1
+,Baselinetariff,1.1
+PLW,Baselinetariff,1.1
+DMA,Baselinetariff,1.1
+GMB,Baselinetariff,1.1
+COM,Baselinetariff,1.1
+CAF,Baselinetariff,1.1
+SLB,Baselinetariff,1.1
+ERI,Baselinetariff,1.1
+SSD,Baselinetariff,1.1
+KIR,Baselinetariff,1.1
+STP,Baselinetariff,1.1
+TUV,Baselinetariff,1.1
+GNB,Baselinetariff,1.1
+PRK,Baselinetariff,1.1
