@@ -21,10 +21,13 @@ rsconnect::deployApp(
   # appDir = "/files/Projects/KITE-shiny",
   appFiles = c(
     "app.R",
-    "app_data/facts.parquet",
-    "app_data/scenario_key.parquet",
-    "app_data/country_key.csv",
-    "app_data/map_world_gtap.rds",   # your map
+    "facts.parquet",
+    "scenario_key.parquet",
+    "country_key.csv",
+    "map_world_gtap.rds",   # your map
     "renv.lock"                      # optional, if using renv
   )
 )
+
+# if error occurs
+rsconnect::showLogs(appName = "kite-shiny", streaming = TRUE)

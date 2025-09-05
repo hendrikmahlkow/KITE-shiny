@@ -12,8 +12,8 @@ library(memoise)
 FOCUS <- c("CAN","CHN","MEX","JPN","EU27")
 
 # --- Load keys & map ---
-scen  <- read_parquet("app_data/scenario_key.parquet") |> as.data.table()
-ckey  <- fread("app_data/country_key.csv")             |> setkey(country_id)
+scen  <- read_parquet("scenario_key.parquet") |> as.data.table()
+ckey  <- fread("country_key.csv")             |> setkey(country_id)
 world <- read_rds("map_world_gtap.rds") |> sf::st_transform(4326)
 
 # standardize mapping key
@@ -22,6 +22,7 @@ if (!"gtap_code" %in% names(ckey)) ckey[, gtap_code := iso3c]
 
 # remove XNA from map entirely  << NEW
 if ("gtap_code" %in% names(world)) world <- subset(world, gtap_code != "XNA")
+if ("gtap_code" %in% names(world)) world <- subset(world, gtap_code != "MNG")
 
 # steps per slider (from scenario_key)
 steps_by_country <- lapply(FOCUS, function(cn) sort(unique(scen[[cn]])))
@@ -41,7 +42,7 @@ find_scenario_id <- function(sel) {
 # read one metric (INT-ENCODED deviations): welfare/export/production are int32 encodings
 .read_metric <- function(sid, metric_col) {
   cols <- c("scenario_id","country_id", metric_col)
-  dt <- read_parquet("app_data/facts.parquet", col_select = cols) |> as.data.table()
+  dt <- read_parquet("facts.parquet", col_select = cols) |> as.data.table()
   dt <- dt[scenario_id == sid, .(country_id, enc = get(metric_col))]
   dt[, value := enc / 1000]                              # percent change directly
   dt <- ckey[dt, on = .(country_id), nomatch = 0L][, .(gtap_code, value)]
