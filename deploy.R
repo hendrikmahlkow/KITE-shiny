@@ -17,4 +17,14 @@ rsconnect::setAccountInfo(name='hendrikmahlkow',
 renv::remove("KITE")
 renv::snapshot()
 
-rsconnect::deployApp('.')
+rsconnect::deployApp(
+  # appDir = "/files/Projects/KITE-shiny",
+  appFiles = c(
+    "app.R",
+    "app_data/facts.parquet",
+    "app_data/scenario_key.parquet",
+    "app_data/country_key.csv",
+    "app_data/map_world_gtap.rds",   # your map
+    "renv.lock"                      # optional, if using renv
+  )
+)

@@ -18,6 +18,7 @@ suppressPackageStartupMessages({
   library(xml2)
   library(countrycode)
 })
+pacman::p_load(doParallel)
 
 # functions
 source("input/countrygroups.R")
@@ -154,7 +155,7 @@ tariff_sequence = seq(1, 1.5, .1)
 # get benchmarks Trump tariffs
 benchmarks <- data_nyt[country %in% c(focus_countries),.(country, value)] %>% rbind(data_nyt[country %in% EU27, .(country = "EU27", value = mean(value, na.rm=TRUE))])
 
-# --- Build the full combinations grid --------
+# Build the full combinations grid
 rate_lists <- setNames(
   lapply(benchmarks$country, function(cty) {
     sort(unique(c(tariff_sequence, benchmarks[country == cty, value])))
@@ -173,12 +174,19 @@ name_combo <- function(row_named) {
         collapse = "_")
 }
 
-# long run - normal elasticities
+# parallel loop
+UseCores = detectCores() - 1 # how many cores to use
+cl = parallel::makeCluster(UseCores, setup_strategy = "sequential") # register CoreCluster
+registerDoParallel(cl)
+
 gc()
-for (i in seq_len(nrow(combo_grid))) {
+foreach(i = seq_len(nrow(combo_grid)),
+        .packages = c("KITE", "readr", "data.table", "stringr")) %dopar% {
 
   combo_vec <- as.numeric(combo_grid[i])
   names(combo_vec) <- names(combo_grid)
+  fn <- sprintf("temp/results/counterfactuals/%s.csv", name_combo(combo_vec))
+  if(file.exists(fn)) next
 
   tariff_temp = copy(scenario[["trump_tariffs"]]$tariff_new)
 
@@ -212,7 +220,96 @@ for (i in seq_len(nrow(combo_grid))) {
     setnames("value", "value_production")
 
   # save
-  fn <- sprintf("temp/results/counterfactuals/%s.csv", name_combo(combo_vec))
   fwrite(data_export, fn, compress = "gzip")
   rm(output)
 }
+stopCluster(cl) # end cluster
+
+
+# 4 - output -----
+
+focus_countries <- c("CAN","CHN","MEX","JPN","EU27")
+
+# 1) Read all files and build a scenario key ----------------------------------
+files <- list.files("temp/results/counterfactuals", pattern = "\\.csv.gz$", full.names = TRUE)
+parse_combo <- function(fn, countries = focus_countries) {
+  base <- basename(sub("\\.csv$", "", fn))
+  toks <- strsplit(base, "_", fixed = TRUE)[[1]]
+
+  # split each token into country and step allowing '.' OR '-'
+  parts   <- tstrsplit(toks, "[-.]", fixed = FALSE)
+  country <- parts[[1]]
+  step    <- suppressWarnings(as.integer(parts[[2]]))  # e.g., "10" -> 10
+
+  # initialize named list of NAs, then fill the matching countries
+  out <- as.list(rep(NA_integer_, length(countries)))
+  names(out) <- countries
+
+  keep <- country %in% countries
+  if (any(keep)) out[country[keep]] <- step[keep]
+
+  as.data.table(out)
+}
+key_rows <- lapply(files, parse_combo, countries = focus_countries)
+key_list <- rbindlist(key_rows, use.names = TRUE, fill = TRUE)
+key_list[, scenario_id := .I][]
+
+# 2) Build a stable country key ----------------------------------------------
+# read any one csv to get countries (or build from your model regions)
+one <- fread(files[1])
+country_key <- unique(one[, .(iso3c = country)])[ , country_id := .I ][]
+setkey(country_key, iso3c)
+
+# 3) Stream everything into one long table (and scale to integers) ------------
+to_int <- function(x) as.integer(round((x - 1) * 100000L))
+
+# helper to read one scenario and emit long rows with ids
+read_one <- function(fn, sid) {
+  dt <- fread(fn)  # columns: country, value_welfare, value_exports, value_production
+  dt <- country_key[dt, on = .(iso3c = country)]
+  # scale to permille (or bp) and drop doubles
+  out <- dt[, .(scenario_id = sid,
+                country_id,
+                welfare    = to_int(value_welfare),
+                exports    = to_int(value_exports),
+                production = to_int(value_production))]
+  out[]
+}
+
+# iterate (chunk if needed)
+facts <- rbindlist(
+  Map(read_one, files, key_list$scenario_id),
+  use.names = TRUE
+)
+
+# 4) Write compact Parquet files ---------------------------------------------
+# enforce integer schema
+tab <- as_arrow_table(
+  facts,
+  schema = schema(
+    scenario_id   = int32(),
+    country_id    = int16(),
+    welfare    = int32(),
+    exports    = int32(),
+    production = int32()
+  )
+)
+# dir.create("app_data", showWarnings = FALSE)
+write_parquet(tab, "app_data/facts.parquet",
+              compression = "gzip", use_dictionary = TRUE)
+
+write_parquet(
+  as_arrow_table(key_list[, .(scenario_id,
+                              CAN = as.integer(CAN),
+                              CHN = as.integer(CHN),
+                              MEX = as.integer(MEX),
+                              JPN = as.integer(JPN),
+                              EU27 = as.integer(EU27))]),
+  "app_data/scenario_key.parquet",
+  compression = "gzip", use_dictionary = TRUE
+)
+
+fwrite(country_key[, .(country_id, iso3c)], "app_data/country_key.csv")
+
+
+
